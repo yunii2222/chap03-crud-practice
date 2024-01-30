@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment/>
+    <!-- 코드 번호 검색 구문 -->
+    <entry key="selectCategoryCode">
+        SELECT
+            *
+        FROM
+            tbl_category
+        WHERE
+            category_code = ?
+    </entry>
+    <!-- 검색하려는 메뉴가 포함된 메뉴이름 검색 구문 -->
+    <entry key="selectCategoryName">
+        SELECT
+            *
+        FROM
+            tbl_category
+        WHERE
+            category_name LIKE CONCAT( '%', ?, '%')
+    </entry>
+    <!-- 추가(삽입) 구문 -->
+    <entry key="insertCategory">
+        INSERT INTO
+            tbl_category(category_name, ref_category_code )
+        VALUES
+            (?, ?)
+    </entry>
+    <!-- 수정구문 -->
+    <entry key="updateCategory">
+        UPDATE
+            tbl_category
+        SET
+            category_name = ?
+        WHERE
+            category_code = ?
+    </entry>
+    <!-- 삭제 구문 -->
+    <entry key="deleteCategory">
+        DELETE
+        FROM
+            tbl_category
+        WHERE
+            category_code = ?
+    </entry>
+</properties>
